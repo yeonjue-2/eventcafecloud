@@ -11,10 +11,15 @@
 </br>
 
 ## 2. 사용 기술
+**`Backend`**
 - Java11 / Spring Boot 2.6.9 / Gradle 
-- Spring Data JPA / MySQL / Spring Security / 
+- Spring Data JPA / MySQL / Spring Security 
+
+**`Frontend`**
 - HTML5 / CSS / JavaScript / jQuery / Thymeleaf
 
+**`Cloud`**
+- AWS S3 Docker, EC2, RDS, ECR, Route53
 </br>
 
 ## 3. ERD 설계
@@ -41,15 +46,24 @@
 **맡은 역할**
 - 프로젝트 기획 및 DB설계 [  🔗](https://iridescent-alder-11d.notion.site/35e60926d5f6480496e66ef9456f9cef) 
 - 이벤트 도메인 개발
-- 이벤트 페이지 CRUD(이벤트 이름, 내용 수정 등) 및 예약관리와 페이징
+- 이벤트 페이지 CRUD(이벤트 이름, 내용 수정 등) 및 예약관리와 페이징, 
 - 이벤트 댓글 CRD 및 페이징, 북마크 기능 추가
 - 고객 피드백 반영 및 개선
 
 
 </br>
 
-## 6. 트러블 슈팅
+## 6. 트러블 슈팅과 리팩토링
 [전체 issue](https://github.com/teawan-Noh/eventcafecloud/issues?q=is%3Aissue+is%3Aclosed)
+</br>
+
+https://github.com/teawan-Noh/eventcafecloud/issues/39
+
+**[🔗 Dto의 반환 위치 : controller 와 service]()**
+
+</br>
+
+**[🔗 글로벌 예외 처리]()**
 
 </br>
 
