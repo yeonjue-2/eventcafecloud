@@ -6,7 +6,7 @@
 
 ## 1. 제작 기간 & 참여 인원
 - 2022.06.24 - 2022.07.29
-- 4명 : 노태완, 강현규, 김예지, 박연주
+- 4인 - 노태완, 강현규, 김예지, 박연주
 
 </br>
 
@@ -44,20 +44,42 @@
 </br>
 
 **맡은 역할**
-- 프로젝트 기획 및 DB설계 [  🔗](https://iridescent-alder-11d.notion.site/35e60926d5f6480496e66ef9456f9cef) 
+- 프로젝트 기획 및 DB설계
 - 이벤트 도메인 개발
-- 이벤트 페이지 CRUD(이벤트 이름, 내용 수정 등) 및 예약관리와 페이징, 
+- 이벤트 페이지 CRUD(이벤트 이름, 내용 수정 등) 
+- 예약관리와 페이징, 필터, 검색 기능 
 - 이벤트 댓글 CRD 및 페이징, 북마크 기능 추가
-- 고객 피드백 반영 및 개선
-
+- 실 고객 피드백 수집 후 피드백 반영 
 
 </br>
 
-## 6. 트러블 슈팅과 리팩토링
+## 6. 트러블 슈팅과 그 외
 [전체 issue](https://github.com/teawan-Noh/eventcafecloud/issues?q=is%3Aissue+is%3Aclosed)
 </br>
 
-https://github.com/teawan-Noh/eventcafecloud/issues/39
+**i) [EventImage가 DB에 저장이 되지 않는 문제 - Github issue #39](https://github.com/teawan-Noh/eventcafecloud/issues/39)**
+- S3에서 받아온 URL로 객체 생성은 되지만 EventImage가 DB에 저장이 되지 않는 문제가 발생
+- eventImage를 event의 하위 엔티티로 처리하는 cascade 을 달아주지 않아서 DB에 들어가지 않음
+- cascade = CascadeType.ALL 를 달아주면 연관관계대로 DB에 저장됨. 
+- [정리 블로그](https://velog.io/@ilov-/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%8B%A4%EC%A4%91-%ED%8C%8C%EC%9D%BC-%EC%B2%98%EB%A6%AC)
+```
+<처리 예시>
+# Event.java
+
+@OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+private List eventImages = new ArrayList<>();
+
+```
+
+</br>
+
+**ii) 페이징**
+
+</br>
+
+**[🔗 프로젝트의 효율적인 기획 및 설계](https://velog.io/@ilov-/프로젝트)**
+
+</br>
 
 **[🔗 Dto의 반환 위치 : controller 와 service]()**
 
