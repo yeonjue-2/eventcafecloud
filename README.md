@@ -120,7 +120,7 @@
   - DB 확인으로 DB에 저장이 되지 않는 다는 사실을 인지
 
 - 해결
-  - eventImage를 event의 하위 엔티티로 처리하는 `cascade` 을 달아주지 않아서 DB에 들어가지 않음
+  - 양방향 관계인 eventImage에 event Entitiy의 영속 상태 전파받도록 하는 `cascade` 을 달아주지 않아서 DB에 들어가지 않음
   - `cascade = CascadeType.ALL` 를 달아주면 연관관계대로 DB에 저장됨. 
   - [기술 블로그 1](https://velog.io/@ilov-/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%8B%A4%EC%A4%91-%ED%8C%8C%EC%9D%BC-%EC%B2%98%EB%A6%AC) , 
   [기술 블로그 2](https://velog.io/@ilov-/Spring-Data-JPA-cascade)
